@@ -1,0 +1,30 @@
+{
+  "name": "mmm-google-tts",
+  "version": "1.0.0",
+  "description": "Google Text-To-Speech Module for MagicMirror². ",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ybbet/MMM-google-tts.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "text-to-speech"
+  ],
+  "author": "Ybbet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ybbet/MMM-google-tts/issues"
+  },
+  "homepage": "https://github.com/Ybbet/MMM-google-tts#readme",
+  "devDependencies": {
+    "eslint": "3.14.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "dependencies": {
+    "light-tts": "*"
+  }
+}
