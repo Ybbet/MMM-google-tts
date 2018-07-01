@@ -74,11 +74,8 @@ Module.register("MMM-google-tts", {
             wrapper.appendChild(video);
 
         } else {
-            let video = document.getElementById("MMM-google-tts-Player");
-            if (wrapper.contains(video)) {
-                video.pause();
-            }
-            wrapper.removeChild(video);
+            const reset = document.createElement("div");
+            wrapper.appendChild(reset);
         }
         return wrapper;
     }
