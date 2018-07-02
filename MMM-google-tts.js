@@ -70,17 +70,21 @@ Module.register("MMM-google-tts", {
         } else if (this.textFired) {
             const video = document.createElement("video");
             // <video autoplay="" controls="" style="height: 40px; width: 66%;"></video>
-            video.src = this.urlGoogleTTS + "tl=" + this.config.lang + "&client=tw-ob&q=" + this.config.message;
             video.setAttribute("id", "MMM-google-tts-Player");
-            video.setAttribute("autoplay", "");
-            video.setAttribute("controls", "");
+            video.setAttribute("autoplay", "autoplay");
+            video.setAttribute("controls", "controls");
+            video.setAttribute("playsinline", "playsinline");
             video.setAttribute("style", "height: 20px; width: 66%;");
+            const source = document.createElement("source");
+            source.src = this.urlGoogleTTS + "tl=" + this.config.lang + "&client=tw-ob&q=" + this.config.message;
+            source.setAttribute("type", "audio/mpeg");
+            video.appendChild(source);
 
             console.log(video);
             // You have to allow autoplay video/audio in your browser.
             // Whitout that, the video will not be loaded and you will have an error your console log.
-            //video.load();
-            //video.play();
+            video.load();
+            video.play();
             wrapper.appendChild(video);
 
             console.log("MMM-google-tts type : " + this.config.type);
