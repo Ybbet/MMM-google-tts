@@ -66,11 +66,13 @@ Module.register("MMM-google-tts", {
             video.setAttribute("id", "MMM-google-tts-Player");
             video.setAttribute("autoplay", "");
             video.setAttribute("controls", "");
-            video.setAttribute("style", "height: 40px; width: 66%;");
+            video.setAttribute("style", "height: 20px; width: 66%;");
 
             console.log(video);
-            video.load();
-            video.play();
+            // You have to allow autoplay video/audio in your browser.
+            // Whitout that, the video will not be loaded and you will have an error your console log.
+            //video.load();
+            //video.play();
             wrapper.appendChild(video);
 
         } else {
