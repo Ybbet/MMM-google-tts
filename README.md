@@ -24,14 +24,24 @@ Text to speech conversion module for MagicMirror². This module uses Google Text
 
 | **Option** | **Default** | **Description** |
 | --- | --- | --- |
-| `text` | `'MMM-google-tts'` | Text to display in debug mode, while there's no text to speech. |
+| `title` | `'An alert'` | The title of the notification. <br><br> **Possible values:** `text` or `html`
+| `message` | `'A message alert'` | The message of the notification. This message will be the text to speech.
 | `lang` | `en-GB` | If you want another language than default you can find suitable languageCode from [Google Document](https://cloud.google.com/speech/docs/languages) and then fill in the voice name here. |
 | `timer` | `10000` | After the timer, the _video_ tag will be deleted from the DOM. If your text to speech is longer than 10s, increase this value. |
+| `type` | `null` | If you want to display an alert or a notification, you need to change this value <br><br> **Possible values:** `alert` or `notification`
 | `debug` | `false` | Display text to speech on the page. |
 
 ## For developers
 
 To use MMM-google-tts in your module you have to send a socket notification like this `this.sendNotification('MMM-google-tts', 'This is a text to read. Hello World!');`.
+
+If the payload is an array instead of a string, you need to specify at least these elements :
+1. title
+1. message
+1. type (`alert` or `notification`)
+1. timer (default : `10000`)
+
+The element `message` will be pronounced by Google-TTS. And an alert will be displayed as the **alert** module of **MagicMirror²** does it.
 
 You could use this module with [MMM-ModuleScheduler](https://github.com/ianperrin/MMM-ModuleScheduler):
 ```
